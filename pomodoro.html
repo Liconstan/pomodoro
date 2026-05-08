@@ -411,7 +411,9 @@
     setInterval(() => {
       const f = document.createElement('div');
       f.className = 'floater';
-      f.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+      f.textContent = emoji;
+      if (emoji === '🍅') f.style.fontSize = '5rem';
       f.style.left = Math.random() * 100 + 'vw';
       f.style.animationDuration = (15 + Math.random() * 15) + 's';
       document.body.appendChild(f);
